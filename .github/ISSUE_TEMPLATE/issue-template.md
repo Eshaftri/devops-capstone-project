@@ -1,6 +1,7 @@
 ---
 name: issue template
-about: This template is for documenting issues or feature requests with detailed requirements and acceptance criteria.
+about: This template is for documenting issues or feature requests with detailed requirements
+  and acceptance criteria.
 title: ''
 labels: ''
 assignees: ''
@@ -14,7 +15,8 @@ assignees: ''
 ### Details and Assumptions
     * [document what you know]      
 ### Acceptance Criteria     
-    gherkin 
+```gherkin 
     Given [some context]
     When [certain action is taken]
     Then [the outcome of action is observed]
+```
