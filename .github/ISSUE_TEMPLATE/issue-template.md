@@ -1,6 +1,6 @@
 ---
 name: issue template
-about: Describe this issue template's purpose here.
+about: This template is for documenting issues or feature requests with detailed requirements and acceptance criteria.
 title: ''
 labels: ''
 assignees: ''
