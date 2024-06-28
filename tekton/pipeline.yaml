@@ -16,20 +16,13 @@ spec:
     - name: branch
       default: main
   tasks:
-    - name: tests
+    - name: init
       workspaces:
         - name: source
-          workspace: pipeline-workspace
+          workspace: pipeline-workspace          
       taskRef:
-        name: nose
-      params:
-      - name: database_uri
-        value: "sqlite:///test.db"
-      - name: args
-        value: "-v --with-spec --spec-color"
-      runAfter:
-        - clone
-        
+        name: cleanup
+
     - name: clone
       workspaces:
         - name: output
@@ -43,3 +36,17 @@ spec:
         value: $(params.branch)
       runAfter:
         - init
+        
+    - name: tests
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
+      taskRef:
+        name: nose
+      params:
+      - name: database_uri
+        value: "sqlite:///test.db"
+      - name: args
+        value: "-v --with-spec --spec-color"
+      runAfter:
+        - clone
